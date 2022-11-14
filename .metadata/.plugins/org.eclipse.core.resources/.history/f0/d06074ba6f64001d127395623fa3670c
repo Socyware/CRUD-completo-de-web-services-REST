@@ -1,0 +1,26 @@
+package services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import dto.ClientDTO;
+import entities.Client;
+import repositories.ClientRepository;
+
+public class ClientService {
+	
+	@Autowired
+	private ClientRepository repository ;
+
+	@GetMapping
+	public Page <Client>  findAll (Pageable pageable) {
+		Page<Client> result = repository.findAll(pageable);
+		Page<ClientDTO> page = result.map( x -> ClientDTO (x));
+		return page;
+
+	}   
+	
+	
+}
