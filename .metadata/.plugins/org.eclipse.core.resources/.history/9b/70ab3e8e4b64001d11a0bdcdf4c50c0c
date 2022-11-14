@@ -1,0 +1,13 @@
+package controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import services.ClientService;
+
+public class ClientController {
+	
+	@Autowired
+	private ClientService service;
+
+	
+}

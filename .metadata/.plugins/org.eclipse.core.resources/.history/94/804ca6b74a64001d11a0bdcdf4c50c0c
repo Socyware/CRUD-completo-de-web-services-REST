@@ -1,0 +1,24 @@
+package services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+
+import entities.Client;
+import repositories.ClientRepository;
+
+public class ClientService {
+	
+	@Autowired
+	private ClientRepository repository ;
+
+	public Page <Client>  findAll (Pegeable pageable) {
+		Page<Client> result = repository.findAll(pegeable);
+		return 
+		
+
+
+
+	}   
+	
+	
+}

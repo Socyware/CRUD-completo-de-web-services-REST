@@ -1,0 +1,18 @@
+package services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import repositories.ClientRepository;
+
+public class ClientService {
+	
+	@Autowired
+	private ClientRepository repository ;
+
+	public List <Client> = findAll (Peable pageable) {
+		Page<CLient> result = repository.
+
+	}   
+	
+	
+}
