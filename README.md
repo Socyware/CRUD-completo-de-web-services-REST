@@ -1,4 +1,4 @@
-# RUD-completo-de-web-services-REST
+# CRUD-completo-de-web-services-REST
 
 
 Um cliente possui nome, CPF, renda, data de nascimento, e quantidade de filhos. A especificação da entidade Client é mostrada a seguir (você deve seguir à risca os nomes de classe e atributos mostrados no diagrama):
