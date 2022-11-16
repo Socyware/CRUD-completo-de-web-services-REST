@@ -1,0 +1,56 @@
+package dto;
+
+
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.Objects;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import entities.Client;
+
+
+public class ClientDTO implements Serializable{
+private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+	private String name;
+	private String cpf;
+	private Double income;
+	
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	private Instant birthDate;
+	private Integer children;
+	
+	public ClientDTO () {
+		
+	}
+
+	public ClientDTO(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.cpf = cpf;
+		this.income = income;
+		this.birthDate = birthDate;
+		this.children = children;
+	}
+
+	
+	public ClientDTO(Client client) {
+		super();
+		id = client.getId();
+		name = client.getName();
+		this.cpf = cpf;
+		this.income = income;
+		this.birthDate = birthDate;
+		this.children = children;
+	}
+
+	
+}

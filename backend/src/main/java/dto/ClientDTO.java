@@ -4,6 +4,8 @@ package dto;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
+
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,6 +30,7 @@ private static final long serialVersionUID = 1L;
 	}
 
 	public ClientDTO(Long id, String name, String cpf, Double income, Instant birthDate, Integer children) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
@@ -35,13 +38,15 @@ private static final long serialVersionUID = 1L;
 		this.birthDate = birthDate;
 		this.children = children;
 	}
+
 	
-	public ClientDTO( Client client) {
+	public ClientDTO(Client client) {
+		super();
 		id = client.getId();
 		name = client.getName();
 		cpf = client.getCpf();
 		income = client.getIncome();
-		birthDate = client.getBirthDate();
+		birthDate  = client.getBirthDate();
 		children = client.getChildren();
 	}
 
@@ -93,6 +98,10 @@ private static final long serialVersionUID = 1L;
 		this.children = children;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -109,7 +118,7 @@ private static final long serialVersionUID = 1L;
 		ClientDTO other = (ClientDTO) obj;
 		return Objects.equals(id, other.id);
 	}
+
 	
-    
 	
 }
